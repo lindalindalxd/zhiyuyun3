@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI备课工具 — 智育云</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== 导航栏 ===== -->
+<nav class="navbar" id="navbar">
+  <div class="container navbar-inner">
+    <a href="index.html" class="navbar-brand">
+      <div class="brand-logo">智</div>
+      <div class="brand-name">
+        <span class="brand-name-main">智育云</span>
+        <span class="brand-name-sub">中学历史教学一站式数字化工具</span>
+      </div>
+    </a>
+    <nav class="navbar-nav">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="artifacts.html" class="nav-link core">教材文物库</a>
+      <a href="ai-tools.html" class="nav-link active">AI备课工具</a>
+      <a href="index.html#resources" class="nav-link">教学资源</a>
+      <a href="index.html#tutorial" class="nav-link">使用教程</a>
+      <a href="index.html#about" class="nav-link">关于我们</a>
+    </nav>
+    <div class="navbar-actions">
+      <button class="nav-search-btn" data-search-open><span>🔍</span><span>搜索文物</span></button>
+      <a href="login.html" class="nav-login">登录 / 注册</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== 页面顶部 Hero ===== -->
+<div class="page-hero">
+  <div class="container page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">首页</a>
+      <span class="breadcrumb-sep">›</span>
+      <span style="color:var(--gold-light);">AI备课工具</span>
+    </div>
+    <h1 class="page-title">🤖 AI 智能备课工具</h1>
+    <p class="page-subtitle">基于大语言模型，结合教材与文物知识库，让备课效率提升10倍</p>
+  </div>
+</div>
+
+<!-- ===== AI 工具主体 ===== -->
+<div class="ai-page">
+  <div class="container">
+
+    <!-- 工具概览横幅 -->
+    <div style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:var(--radius-lg);padding:32px 36px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;gap:24px;overflow:hidden;position:relative;">
+      <div style="position:absolute;right:-20px;top:-20px;width:160px;height:160px;border-radius:50%;background:rgba(201,151,58,0.12);"></div>
+      <div style="position:relative;z-index:1;">
+        <div style="font-family:var(--font-serif);font-size:1.5rem;color:white;margin-bottom:8px;">AI驱动的历史备课助手</div>
+        <p style="color:rgba(255,255,255,0.65);font-size:0.875rem;line-height:1.7;max-width:480px;">输入文物名称、教材章节或历史知识点，AI将自动整合平台文物数据库，为您生成专业、实用的教学内容。</p>
+      </div>
+      <div style="display:flex;gap:20px;flex-shrink:0;position:relative;z-index:1;">
+        <div style="text-align:center;"><div style="font-family:var(--font-serif);font-size:1.8rem;color:var(--gold-light);font-weight:700;">4种</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.55);">专业工具</div></div>
+        <div style="text-align:center;"><div style="font-family:var(--font-serif);font-size:1.8rem;color:var(--gold-light);font-weight:700;">500+</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.55);">文物知识库</div></div>
+        <div style="text-align:center;"><div style="font-family:var(--font-serif);font-size:1.8rem;color:var(--gold-light);font-weight:700;">分钟级</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.55);">生成速度</div></div>
+      </div>
+    </div>
+
+    <!-- 4大工具网格 -->
+    <div class="ai-tools-large-grid">
+      <!-- 工具1：教学设计生成器 -->
+      <div class="ai-large-card">
+        <div class="ai-large-header">
+          <div class="ai-large-icon" style="background:linear-gradient(135deg,#8C1515,#C9973A);">✍️</div>
+          <div>
+            <div class="ai-large-title">教学设计生成器</div>
+            <div class="ai-large-subtitle">核心功能 · 最受欢迎</div>
+          </div>
+        </div>
+        <p class="ai-large-desc">
+          输入文物名称或教材章节，AI自动生成完整的一课时教学设计，包含教学目标、教学重难点、课堂活动方案、板书设计，可直接导出Word文档，开箱即用。
+        </p>
+        <div class="ai-demo-area">
+          <div class="ai-demo-label">💬 尝试输入（示例）</div>
+          <textarea class="ai-demo-input" id="designInput" rows="3" placeholder="请输入：「请为"司母戊大方鼎"生成一节初中历史课教学设计，1课时，难度：初一」">请为"司母戊大方鼎"生成一节初中历史课教学设计，1课时，着重体现其礼器地位与铸造工艺</textarea>
+          <div style="margin-top:10px;display:flex;gap:8px;justify-content:flex-end;">
+            <button class="btn btn-sm btn-gold ai-generate-btn" id="genDesignBtn">🤖 AI生成教学设计</button>
+          </div>
+        </div>
+        <!-- 生成结果 -->
+        <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:14px;" id="designResult">
+          <div style="font-size:0.78rem;color:var(--gold-dark);font-weight:500;margin-bottom:8px;">✅ 生成结果预览（示例）</div>
+          <div class="ai-result-content" style="font-size:0.82rem;color:var(--text-medium);line-height:1.75;">
+            <strong>【教学目标】</strong><br>
+            1. 知识目标：了解司母戊鼎的基本信息，知道商代青铜铸造工艺的特点<br>
+            2. 能力目标：通过分析文物图片，培养史料实证能力<br>
+            3. 情感目标：感受中华文明的悠久历史，增强民族自豪感<br><br>
+            <strong>【教学重难点】</strong><br>
+            重点：商代青铜铸造技术 · 难点：理解鼎作为礼器的政治含义...
+          </div>
+        </div>
+        <div class="ai-tags">
+          <span class="ai-tag">一键导出Word</span>
+          <span class="ai-tag">支持各年级</span>
+          <span class="ai-tag">可自定义课时</span>
+          <span class="ai-tag">三维目标完整</span>
+        </div>
+      </div>
+
+      <!-- 工具2：课件大纲助手 -->
+      <div class="ai-large-card">
+        <div class="ai-large-header">
+          <div class="ai-large-icon" style="background:linear-gradient(135deg,#1565C0,#1E88E5);">📊</div>
+          <div>
+            <div class="ai-large-title">课件大纲助手</div>
+            <div class="ai-large-subtitle">PPT框架 · 节省50%备课时间</div>
+          </div>
+        </div>
+        <p class="ai-large-desc">
+          基于文物信息与教材内容，AI智能规划PPT课件结构，自动生成各页面内容要点，提供文物故事、历史背景、知识延伸等板块，支持"文物探秘"风格与"标准教学"风格切换。
+        </p>
+        <div class="ai-demo-area">
+          <div class="ai-demo-label">💬 输入需求</div>
+          <textarea class="ai-demo-input" id="outlineInput" rows="3" placeholder="例如：为七年级历史第5课，生成以司母戊鼎为主线的PPT大纲">为《青铜器与甲骨文》生成一个以司母戊鼎为导入的PPT大纲，风格：图文并茂，约15页</textarea>
+          <div style="margin-top:10px;display:flex;gap:8px;justify-content:flex-end;">
+            <button class="btn btn-sm btn-primary ai-generate-btn" id="genOutlineBtn">📊 生成课件大纲</button>
+          </div>
+        </div>
+        <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:14px;" id="outlineResult">
+          <div style="font-size:0.78rem;color:var(--gold-dark);font-weight:500;margin-bottom:8px;">✅ 大纲预览（示例）</div>
+          <div class="ai-result-content" style="font-size:0.82rem;color:var(--text-medium);line-height:1.8;">
+            第1页：标题页「国宝探秘·走近司母戊鼎」<br>
+            第2页：导入——震撼的重量（832kg是什么概念？）<br>
+            第3页：文物简介与出土故事<br>
+            第4-5页：商代青铜铸造工艺解析<br>
+            第6-7页：鼎与礼制——权力的象征...
+          </div>
+        </div>
+        <div class="ai-tags">
+          <span class="ai-tag">自动生成框架</span>
+          <span class="ai-tag">多风格切换</span>
+          <span class="ai-tag">配图建议</span>
+          <span class="ai-tag">导出大纲文档</span>
+        </div>
+      </div>
+
+      <!-- 工具3：历史习题生成器 -->
+      <div class="ai-large-card">
+        <div class="ai-large-header">
+          <div class="ai-large-icon" style="background:linear-gradient(135deg,#1e7e34,#28a745);">❓</div>
+          <div>
+            <div class="ai-large-title">历史习题生成器</div>
+            <div class="ai-large-subtitle">智能出题 · 符合命题规律</div>
+          </div>
+        </div>
+        <p class="ai-large-desc">
+          根据文物名称、知识点及难度要求，自动生成符合中考/高考命题规律的历史习题，包含选择题、材料分析题，自带详细答案解析，可批量生成并导出试卷。
+        </p>
+        <div class="ai-demo-area">
+          <div class="ai-demo-label">💬 出题需求</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+            <div>
+              <div style="font-size:0.75rem;color:var(--text-light);margin-bottom:4px;">题目类型</div>
+              <select class="filter-select" id="questionType" style="width:100%;">
+                <option>选择题（4选1）</option>
+                <option>材料分析题</option>
+                <option>混合题型</option>
+              </select>
+            </div>
+            <div>
+              <div style="font-size:0.75rem;color:var(--text-light);margin-bottom:4px;">难度等级</div>
+              <select class="filter-select" id="difficultyLevel" style="width:100%;">
+                <option>基础（★）</option>
+                <option selected>中等（★★）</option>
+                <option>提高（★★★）</option>
+              </select>
+            </div>
+          </div>
+          <input type="text" class="ai-demo-input" id="knowledgeInput" placeholder="知识点：司母戊鼎 / 商代青铜工艺 / 礼乐制度" value="司母戊大方鼎的历史意义与商代青铜器特点">
+          <div style="margin-top:10px;display:flex;gap:8px;justify-content:flex-end;">
+            <button class="btn btn-sm ai-generate-btn" id="genQuestionsBtn" style="background:#1e7e34;color:white;border-radius:var(--radius);padding:6px 16px;font-size:0.82rem;cursor:pointer;font-family:var(--font-sans);">❓ 生成习题</button>
+          </div>
+        </div>
+        <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:14px;" id="questionsResult">
+          <div style="font-size:0.78rem;color:var(--gold-dark);font-weight:500;margin-bottom:8px;">✅ 习题预览（示例）</div>
+          <div class="ai-result-content" style="font-size:0.82rem;color:var(--text-medium);line-height:1.8;">
+            <strong>1.</strong>（2023·模拟）下列文物中，能直接说明商代已掌握高超青铜铸造技术的是（&nbsp;&nbsp;）<br>
+            A.马踏飞燕 B.司母戊大方鼎 C.越王勾践剑 D.唐三彩<br>
+            <span style="color:var(--primary);">【答案】B 【解析】司母戊鼎重达832kg，铸造需协调千人...</span>
+          </div>
+        </div>
+        <div class="ai-tags">
+          <span class="ai-tag">选择题生成</span>
+          <span class="ai-tag">材料分析题</span>
+          <span class="ai-tag">答案与详解</span>
+          <span class="ai-tag">批量导出试卷</span>
+        </div>
+      </div>
+
+      <!-- 工具4：AI问答助手 -->
+      <div class="ai-large-card">
+        <div class="ai-large-header">
+          <div class="ai-large-icon" style="background:linear-gradient(135deg,#6A1B9A,#AB47BC);">💬</div>
+          <div>
+            <div class="ai-large-title">历史AI问答助手</div>
+            <div class="ai-large-subtitle">专业问答 · 24小时在线</div>
+          </div>
+        </div>
+        <p class="ai-large-desc">
+          专业历史知识问答助手，结合教材内容与文物背景，为教师解答备课疑问，提供深度历史分析。支持对话式问答，可引用文物实例辅助解释，也可用于课堂辅助答疑。
+        </p>
+        <div style="background:var(--bg-section);border-radius:var(--radius);padding:16px;margin-bottom:14px;min-height:160px;max-height:200px;overflow-y:auto;" id="chatHistory">
+          <div class="chat-message chat-message-user">
+            <div class="chat-avatar chat-avatar-user">师</div>
+            <div class="chat-bubble chat-bubble-user">司母戊鼎为什么被称为"国之重器"？如何在课堂上向学生解释？</div>
+          </div>
+          <div class="chat-message chat-message-ai">
+            <div class="chat-avatar chat-avatar-ai">AI</div>
+            <div class="chat-bubble chat-bubble-ai">
+              "国之重器"有三层含义：<br>
+              <strong>①重量之重</strong>——832kg，说明商代已能组织大规模协作；<br>
+              <strong>②礼制之重</strong>——鼎是礼制的核心，"天子九鼎"象征王权；<br>
+              <strong>③史料之重</strong>——是研究商代的第一手实物资料。<br>
+              建议课堂上先问：「你见过最重的东西是什么？」引发对比...
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;margin-bottom:14px;">
+          <input type="text" class="ai-demo-input" id="chatInput" placeholder="向AI提问历史问题..." style="flex:1;">
+          <button class="btn btn-sm btn-primary" id="sendChatBtn" style="flex-shrink:0;">发送</button>
+        </div>
+        <div class="ai-tags">
+          <span class="ai-tag">对话式问答</span>
+          <span class="ai-tag">文物实例引用</span>
+          <span class="ai-tag">24小时在线</span>
+          <span class="ai-tag">教材精准对应</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 使用提示 -->
+    <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 32px;margin-top:8px;">
+      <h3 style="font-family:var(--font-serif);font-size:1.1rem;margin-bottom:20px;color:var(--text-dark);">💡 使用小技巧</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+        <div style="padding:16px;background:var(--bg-warm);border-radius:var(--radius);border:1px solid var(--border);">
+          <div style="font-size:1.3rem;margin-bottom:8px;">🎯</div>
+          <div style="font-size:0.875rem;color:var(--text-dark);font-weight:500;margin-bottom:6px;">越具体，效果越好</div>
+          <div style="font-size:0.8rem;color:var(--text-medium);line-height:1.65;">输入时说明教材版本、年级、课时数，AI会生成更精准的内容</div>
+        </div>
+        <div style="padding:16px;background:var(--bg-warm);border-radius:var(--radius);border:1px solid var(--radius);">
+          <div style="font-size:1.3rem;margin-bottom:8px;">🔄</div>
+          <div style="font-size:0.875rem;color:var(--text-dark);font-weight:500;margin-bottom:6px;">结合文物库使用</div>
+          <div style="font-size:0.8rem;color:var(--text-medium);line-height:1.65;">先在文物库找到目标文物，点击"AI生成教学设计"，会自动带入文物详情</div>
+        </div>
+        <div style="padding:16px;background:var(--bg-warm);border-radius:var(--radius);border:1px solid var(--radius);">
+          <div style="font-size:1.3rem;margin-bottom:8px;">✏️</div>
+          <div style="font-size:0.875rem;color:var(--text-dark);font-weight:500;margin-bottom:6px;">生成后可二次编辑</div>
+          <div style="font-size:0.8rem;color:var(--text-medium);line-height:1.65;">生成的内容均可在线编辑修改，也可下载到本地，按需调整后再使用</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== 页脚 ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="navbar-brand" style="margin-bottom:0;">
+          <div class="brand-logo">智</div>
+          <div class="brand-name"><span class="brand-name-main">智育云</span><span class="brand-name-sub">AI历史教材文物平台</span></div>
+        </div>
+        <p class="footer-brand-desc">AI赋能历史教材文物活化数字化教学平台，为中学历史教学提供一站式数字化工具。</p>
+      </div>
+      <div>
+        <div class="footer-col-title">AI工具</div>
+        <div class="footer-links">
+          <a href="#" class="footer-link">教学设计生成</a>
+          <a href="#" class="footer-link">课件大纲助手</a>
+          <a href="#" class="footer-link">习题生成器</a>
+          <a href="#" class="footer-link">AI问答助手</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">文物库</div>
+        <div class="footer-links">
+          <a href="artifacts.html" class="footer-link">教材文物库</a>
+          <a href="artifacts.html" class="footer-link">按朝代浏览</a>
+          <a href="artifacts.html" class="footer-link">按教材浏览</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">帮助支持</div>
+        <div class="footer-links">
+          <a href="index.html#tutorial" class="footer-link">使用教程</a>
+          <a href="index.html#about" class="footer-link">关于我们</a>
+          <a href="login.html" class="footer-link">登录 / 注册</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© <span id="currentYear">2024</span> 智育云. 保留所有权利.</span>
+      <span class="footer-icp">陕ICP备XXXXXXXX号</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 搜索弹窗 -->
+<div id="searchModal" class="search-modal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="search-modal-card">
+    <h3 class="search-modal-title">🔍 搜索文物库</h3>
+    <div class="search-modal-input-wrap">
+      <span class="search-modal-icon">🔍</span>
+      <input type="text" class="search-modal-input" placeholder="输入文物名称、朝代、知识点...">
+    </div>
+    <div class="hot-searches">
+      <span class="hot-search-label">热门：</span>
+      <span class="hot-search-tag">司母戊鼎</span>
+      <span class="hot-search-tag">兵马俑</span>
+      <span class="hot-search-tag">清明上河图</span>
+    </div>
+    <button onclick="location.href='artifacts.html'" style="width:100%;padding:12px;background:var(--primary);color:white;border-radius:var(--radius);font-size:0.92rem;cursor:pointer;font-family:var(--font-sans);border:none;">搜索</button>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

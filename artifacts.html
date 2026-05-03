@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>教材文物库 — 智育云</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== 导航栏 ===== -->
+<nav class="navbar" id="navbar">
+  <div class="container navbar-inner">
+    <a href="index.html" class="navbar-brand">
+      <div class="brand-logo">智</div>
+      <div class="brand-name">
+        <span class="brand-name-main">智育云</span>
+        <span class="brand-name-sub">中学历史教学一站式数字化工具</span>
+      </div>
+    </a>
+    <nav class="navbar-nav">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="artifacts.html" class="nav-link core active">教材文物库</a>
+      <a href="ai-tools.html" class="nav-link">AI备课工具</a>
+      <a href="index.html#resources" class="nav-link">教学资源</a>
+      <a href="index.html#tutorial" class="nav-link">使用教程</a>
+      <a href="index.html#about" class="nav-link">关于我们</a>
+    </nav>
+    <div class="navbar-actions">
+      <button class="nav-search-btn" data-search-open>
+        <span>🔍</span><span>搜索文物</span>
+      </button>
+      <a href="login.html" class="nav-login">登录 / 注册</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== 页面顶部 Hero ===== -->
+<div class="page-hero">
+  <div class="container page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">首页</a>
+      <span class="breadcrumb-sep">›</span>
+      <span style="color:var(--gold-light);">教材文物库</span>
+    </div>
+    <h1 class="page-title">📜 教材文物库</h1>
+    <p class="page-subtitle">收录初中·高中历史教材全部重点文物，按朝代、教材版本、知识点多维度检索</p>
+  </div>
+</div>
+
+<!-- ===== 搜索过滤栏 ===== -->
+<div class="search-bar">
+  <div class="container search-bar-inner">
+    <div class="search-input-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="artifactSearch" placeholder="搜索文物名称、朝代、知识点...">
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">教材版本</span>
+      <select class="filter-select">
+        <option>全部版本</option>
+        <option>人教版</option>
+        <option>北师大版</option>
+        <option>岳麓版</option>
+        <option>统编版</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">学段</span>
+      <select class="filter-select">
+        <option>全部学段</option>
+        <option>初中历史</option>
+        <option>高中历史</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">历史年代</span>
+      <select class="filter-select">
+        <option>全部年代</option>
+        <option>夏商周</option>
+        <option>秦汉</option>
+        <option>魏晋南北朝</option>
+        <option>隋唐</option>
+        <option>宋元</option>
+        <option>明清</option>
+        <option>近现代</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">文物类别</span>
+      <select class="filter-select">
+        <option>全部类别</option>
+        <option>青铜器</option>
+        <option>陶瓷器</option>
+        <option>玉器</option>
+        <option>兵器</option>
+        <option>绘画</option>
+        <option>书法</option>
+        <option>文献典籍</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 文物库内容区 ===== -->
+<div class="artifacts-page">
+  <div class="container">
+    <div class="artifacts-page-header">
+      <div class="result-count">共找到 <strong>5</strong> 件文物</div>
+      <div class="sort-wrap">
+        <span>排序方式：</span>
+        <select class="filter-select">
+          <option>教材顺序</option>
+          <option>朝代顺序</option>
+          <option>最新收录</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 年代分组标题：商朝 -->
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;margin-top:8px;">
+      <div style="width:4px;height:20px;background:linear-gradient(to bottom,var(--primary),var(--gold));border-radius:2px;"></div>
+      <h3 style="font-family:var(--font-serif);font-size:1.05rem;color:var(--text-dark);">商朝时期</h3>
+      <div style="flex:1;height:1px;background:var(--border);"></div>
+      <span style="font-size:0.8rem;color:var(--text-light);">约前1600年—前1046年</span>
+    </div>
+    <div class="artifacts-full-grid" style="margin-bottom:44px;">
+      <div class="artifact-card" onclick="location.href='artifact-detail.html'">
+        <div class="artifact-card-img">
+          <img src="wenwu/后母戊鼎1.webp" alt="后母戊鼎" style="width:100%;height:100%;object-fit:cover;">
+          <div class="artifact-img-overlay"></div>
+          <div class="artifact-era-badge">商朝 · 约前1300年</div>
+        </div>
+        <div class="artifact-card-body">
+          <h3 class="artifact-card-name">后母戊鼎</h3>
+          <div class="artifact-card-tags"><span class="tag tag-red">青铜器</span><span class="tag tag-gold">国家一级</span></div>
+          <p class="artifact-card-desc">商朝晚期青铜器，1939年出土于河南安阳殷墟，重832.84千克，是迄今世界上出土最大最重的青铜礼器。</p>
+          <div class="artifact-card-footer">
+            <span class="artifact-textbook-label">📚 人教版七上 第5课</span>
+            <a href="artifact-detail.html" class="artifact-detail-link">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+      <div class="artifact-card" onclick="location.href='artifact-detail.html'">
+        <div class="artifact-card-img">
+          <img src="wenwu/四羊方尊1.webp" alt="四羊方尊" style="width:100%;height:100%;object-fit:cover;">
+          <div class="artifact-img-overlay"></div>
+          <div class="artifact-era-badge">商朝 · 约前1200年</div>
+        </div>
+        <div class="artifact-card-body">
+          <h3 class="artifact-card-name">四羊方尊</h3>
+          <div class="artifact-card-tags"><span class="tag tag-red">青铜器</span><span class="tag tag-gold">国家一级</span></div>
+          <p class="artifact-card-desc">商朝晚期青铜器，1938年出土于湖南宁乡，是中国现存商代青铜方尊中最大的一件，被誉为"臻于极致的青铜典范"。</p>
+          <div class="artifact-card-footer">
+            <span class="artifact-textbook-label">📚 人教版七上</span>
+            <a href="artifact-detail.html" class="artifact-detail-link">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 西周 -->
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+      <div style="width:4px;height:20px;background:linear-gradient(to bottom,var(--primary),var(--gold));border-radius:2px;"></div>
+      <h3 style="font-family:var(--font-serif);font-size:1.05rem;color:var(--text-dark);">西周时期</h3>
+      <div style="flex:1;height:1px;background:var(--border);"></div>
+      <span style="font-size:0.8rem;color:var(--text-light);">前1046年—前771年</span>
+    </div>
+    <div class="artifacts-full-grid" style="margin-bottom:44px;">
+      <div class="artifact-card" onclick="location.href='artifact-detail.html'">
+        <div class="artifact-card-img">
+          <img src="wenwu/何尊1.webp" alt="何尊" style="width:100%;height:100%;object-fit:cover;">
+          <div class="artifact-img-overlay"></div>
+          <div class="artifact-era-badge">西周 · 约前1000年</div>
+        </div>
+        <div class="artifact-card-body">
+          <h3 class="artifact-card-name">何尊</h3>
+          <div class="artifact-card-tags"><span class="tag tag-red">青铜器</span><span class="tag tag-gold">国家一级</span></div>
+          <p class="artifact-card-desc">西周早期青铜器，1963年出土于陕西宝鸡，内底铸有铭文"宅兹中国"，是"中国"一词最早的文字记载。</p>
+          <div class="artifact-card-footer">
+            <span class="artifact-textbook-label">📚 人教版七上</span>
+            <a href="artifact-detail.html" class="artifact-detail-link">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 宋元 -->
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+      <div style="width:4px;height:20px;background:linear-gradient(to bottom,var(--primary),var(--gold));border-radius:2px;"></div>
+      <h3 style="font-family:var(--font-serif);font-size:1.05rem;color:var(--text-dark);">宋元时期</h3>
+      <div style="flex:1;height:1px;background:var(--border);"></div>
+      <span style="font-size:0.8rem;color:var(--text-light);">960年—1368年</span>
+    </div>
+    <div class="artifacts-full-grid" style="margin-bottom:44px;">
+      <div class="artifact-card" onclick="location.href='artifact-detail.html'">
+        <div class="artifact-card-img">
+          <img src="wenwu/《雪夜访普图》1.webp" alt="《雪夜访普图》" style="width:100%;height:100%;object-fit:cover;">
+          <div class="artifact-img-overlay"></div>
+          <div class="artifact-era-badge">南宋 · 约12世纪</div>
+        </div>
+        <div class="artifact-card-body">
+          <h3 class="artifact-card-name">《雪夜访普图》</h3>
+          <div class="artifact-card-tags"><span class="tag tag-red">绘画</span><span class="tag tag-blue">故宫博物院藏</span></div>
+          <p class="artifact-card-desc">南宋刘俊所绘，描绘宋太祖赵匡胤雪夜访问赵普的故事，展现君臣议政的历史场景。</p>
+          <div class="artifact-card-footer">
+            <span class="artifact-textbook-label">📚 人教版七下</span>
+            <a href="artifact-detail.html" class="artifact-detail-link">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 明清 -->
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+      <div style="width:4px;height:20px;background:linear-gradient(to bottom,var(--primary),var(--gold));border-radius:2px;"></div>
+      <h3 style="font-family:var(--font-serif);font-size:1.05rem;color:var(--text-dark);">明清时期</h3>
+      <div style="flex:1;height:1px;background:var(--border);"></div>
+      <span style="font-size:0.8rem;color:var(--text-light);">1368年—1912年</span>
+    </div>
+    <div class="artifacts-full-grid" style="margin-bottom:44px;">
+      <div class="artifact-card" onclick="location.href='artifact-detail.html'">
+        <div class="artifact-card-img">
+          <img src="wenwu/姑苏繁华图1.webp" alt="《姑苏繁华图》" style="width:100%;height:100%;object-fit:cover;">
+          <div class="artifact-img-overlay"></div>
+          <div class="artifact-era-badge">清朝 · 约1759年</div>
+        </div>
+        <div class="artifact-card-body">
+          <h3 class="artifact-card-name">《姑苏繁华图》</h3>
+          <div class="artifact-card-tags"><span class="tag tag-red">绘画</span><span class="tag tag-gold">国家一级</span></div>
+          <p class="artifact-card-desc">清朝徐扬所绘，全长1225厘米，描绘乾隆年间苏州繁华景象，是研究清代社会的珍贵图像资料。</p>
+          <div class="artifact-card-footer">
+            <span class="artifact-textbook-label">📚 人教版七下</span>
+            <a href="artifact-detail.html" class="artifact-detail-link">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 分页 -->
+    <div class="pagination">
+      <button class="page-btn active">1</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 页脚 ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="navbar-brand" style="margin-bottom:0;">
+          <div class="brand-logo">智</div>
+          <div class="brand-name">
+            <span class="brand-name-main">智育云</span>
+            <span class="brand-name-sub">AI历史教材文物平台</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc">AI赋能历史教材文物活化数字化教学平台，为中学历史教学提供一站式数字化工具。</p>
+      </div>
+      <div>
+        <div class="footer-col-title">产品功能</div>
+        <div class="footer-links">
+          <a href="artifacts.html" class="footer-link">教材文物库</a>
+          <a href="ai-tools.html" class="footer-link">AI备课助手</a>
+          <a href="ai-tools.html" class="footer-link">习题生成器</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">文物分类</div>
+        <div class="footer-links">
+          <a href="#" class="footer-link">夏商周文物</a>
+          <a href="#" class="footer-link">秦汉文物</a>
+          <a href="#" class="footer-link">隋唐文物</a>
+          <a href="#" class="footer-link">宋元明清文物</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">帮助支持</div>
+        <div class="footer-links">
+          <a href="index.html#tutorial" class="footer-link">使用教程</a>
+          <a href="index.html#about" class="footer-link">关于我们</a>
+          <a href="login.html" class="footer-link">登录 / 注册</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© <span id="currentYear">2024</span> 智育云. 保留所有权利.</span>
+      <span class="footer-icp">陕ICP备XXXXXXXX号</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 搜索弹窗 -->
+<div id="searchModal" class="search-modal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="search-modal-card">
+    <h3 class="search-modal-title">🔍 搜索文物库</h3>
+    <div class="search-modal-input-wrap">
+      <span class="search-modal-icon">🔍</span>
+      <input type="text" class="search-modal-input" placeholder="输入文物名称、朝代、知识点...">
+    </div>
+    <div class="hot-searches">
+      <span class="hot-search-label">热门搜索：</span>
+      <span class="hot-search-tag">何尊</span>
+      <span class="hot-search-tag">后母戊鼎</span>
+      <span class="hot-search-tag">四羊方尊</span>
+      <span class="hot-search-tag">姑苏繁华图</span>
+    </div>
+    <button onclick="this.closest('.search-modal').classList.remove('open')" style="width:100%;padding:12px;background:var(--primary);color:white;border-radius:var(--radius);font-size:0.92rem;cursor:pointer;font-family:var(--font-sans);border:none;">搜索</button>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
